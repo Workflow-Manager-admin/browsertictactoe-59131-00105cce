@@ -1,0 +1,81 @@
+:root {
+  --ttt-accent: #ffeb3b;
+  --ttt-primary: #1976d2;
+  --ttt-secondary: #424242;
+}
+
+.ttt-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  background: var(--bg-primary, #fff);
+}
+
+.ttt-title {
+  margin-bottom: 1.1em;
+  letter-spacing: 0.04em;
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(3, 64px);
+  gap: 8px;
+  background: var(--ttt-accent);
+  padding: 10px;
+  border-radius: 14px;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.06);
+}
+
+.ttt-square {
+  width: 64px;
+  height: 64px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: #fff;
+  border: 2px solid var(--ttt-accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ttt-square:disabled {
+  background: #f8f9fa;
+  opacity: 0.8;
+}
+
+.ttt-status {
+  margin: 0.85em 0;
+  font-size: 1.05rem;
+  color: var(--ttt-secondary);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  min-height: 1.5em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 5px;
+    padding: 2vw;
+  }
+
+  .ttt-square {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+  }
+  .ttt-title {
+    font-size: 1.5rem;
+  }
+}
